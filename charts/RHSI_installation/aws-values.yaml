@@ -79,10 +79,10 @@ prometheus: #this will help in generating metrics
     limits: 256Mi
 
 
-remoteSites:
- - name: udeploy-agents-dev-di1001
-   edgehost:  remoteistedetails
-   interrouterhost:  remoteistedetails
+    #remoteSites:
+    # - name: udeploy-agents-dev-di1001
+    #   edgehost:  remoteistedetails
+    #   interrouterhost:  remoteistedetails
 
 selfSignedCerts: true
 

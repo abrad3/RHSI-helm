@@ -5,7 +5,7 @@ common:
   siteconfigonly: false
   ingressType: "route"
   ingress:
-    domain: "apps.azure-sw5l4-1.sw5l4-1.sandbox2029.opentlc.com" # Domain of the cluster, like "apps-int.di1001.cpaas.test".
+    domain: "apps.cluster-458qn.gcp.redhatworkshops.io" # Domain of the cluster, like "apps-int.di1001.cpaas.test".
 
 console:
   enabled: true
@@ -78,16 +78,9 @@ prometheus: #this will help in generating metrics
     requests: 256Mi
     limits: 256Mi
 
-
-remoteSites:
- - name: udeploy-agents-dev-di1001
-   edgehost:  remoteistedetails
-   interrouterhost:  remoteistedetails
-
 selfSignedCerts: true
 
 linkTokenCreate: false 
-
 
 secrets:
   - skupper-claims-server

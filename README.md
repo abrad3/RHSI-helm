@@ -33,13 +33,13 @@ These two steps should be repeated in all the namespaces(assuming east and west 
  
 This will install only a configmap called `skupper-site`. This will hold the information about the skupper site like its name and few other details.
 
-``` helm upgrade --install skupper ./ --set siteconfigonly=true``` 
+``` helm upgrade --install skupper ./ --set common.siteconfigonly=true``` 
        
 2. Deploy other components of skupper. 
 
 Note: Skupper by default uses self signed certificates to install, Check the values files and make sure selfsigned certificates variable is set to false and the anz certificates generated are placed under the certs folder.  Refer to certificates section below on how to create them.
 
-``` helm upgrade --install skupper ./ --set siteconfigonly=false``` 
+``` helm upgrade --install skupper ./ --set common.siteconfigonly=false``` 
 
 check the status of the installation by running ```skupper status``` command.
 
@@ -84,7 +84,7 @@ Grab the interrouter host of west namespace
 ```
 
 2. Upgrade the Helm chart in the site  - i.e. run
-``` helm upgrade skupper ./ --set siteconfigonly=false``` 
+``` helm upgrade skupper ./ --set common.siteconfigonly=false``` 
 
 ## Moving from another installation of RHSI to this new helm chart
 
@@ -98,7 +98,7 @@ if you already have RHSI installed using anyother method and want to migrate to 
 
 Note: if you are using custom certs like ANZ CA, make sure you have those certs placed in the certs folder before running this command.
 
-  ```helm upgrade --install skupper ./ --set siteconfigonly=false```
+  ```helm upgrade --install skupper ./ --set common.siteconfigonly=false```
 
 ## Certificates
 This chart by default generates self signed certificates which are used by skupper router and service controller pods. This is controlled by the varialbe from the values file called ```selfSignedCerts```. This defaults to true.

@@ -2,10 +2,10 @@
 
 # image versions are based on the releases from skupper.io, Every release of skupper will have four containers(at the time of document 20/10). Check the mainfest for each release and push them to DTR.
 common:
-  siteconfigonly: false
+  siteconfigonly: false 
   ingressType: "route"
   ingress:
-    domain: "apps.cluster-sw5l4.sw5l4.sandbox2722.opentlc.com" # Domain of the cluster, like "apps-int.di1001.cpaas.test".
+    domain: "apps.cluster-tgw9g.tgw9g.sandbox2633.opentlc.com" # Domain of the cluster, like "apps-int.di1001.cpaas.test".
 
 console:
   enabled: true
@@ -78,16 +78,9 @@ prometheus: #this will help in generating metrics
     requests: 256Mi
     limits: 256Mi
 
-
-    #remoteSites:
-    # - name: udeploy-agents-dev-di1001
-    #   edgehost:  remoteistedetails
-    #   interrouterhost:  remoteistedetails
-
 selfSignedCerts: true
 
 linkTokenCreate: true 
-
 
 secrets:
   - skupper-claims-server

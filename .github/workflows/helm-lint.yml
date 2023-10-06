@@ -58,11 +58,10 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
         uses: helm/kind-action@v1.7.0
 
-      - name: Install RHSI siteconfigOnly
+      - name: Install RHSI
         if: steps.list-changed.outputs.changed == 'true'
         run: |
           helm install --create-namespace --namespace skupper \
-               skupper charts/rhsi --set common.siteconfigonly=true
-          helm template charts/rhsi --set common.siteconfigonly=false
+               skupper charts/rhsi
 
             

@@ -1,4 +1,3 @@
-{{ if not .Values.common.siteconfigonly }}
 {{ if .Values.flowCollector.enabled }}
 apiVersion: v1
 kind: Service
@@ -17,5 +16,4 @@ spec:
     skupper.io/component: prometheus
   sessionAffinity: None
   type: ClusterIP
-{{- end }}
 {{- end }}

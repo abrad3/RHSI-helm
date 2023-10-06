@@ -1,4 +1,3 @@
-{{ if not .Values.common.siteconfigonly }}
 {{ if .Values.flowCollector.enabled }}
 apiVersion: apps/v1
 kind: Deployment
@@ -64,5 +63,4 @@ spec:
         name: prometheus-config
       - emptyDir: {}
         name: prometheus-storage-volume
-{{- end }}
 {{- end }}

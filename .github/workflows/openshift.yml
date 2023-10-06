@@ -68,9 +68,7 @@ jobs:
     - name: Install RHSI
       run: |
         helm upgrade --install --create-namespace --namespace skupper \
-               skupper charts/rhsi --set common.siteconfigonly=true
-        helm upgrade --install --create-namespace --namespace skupper \
-             skupper charts/rhsi --set common.siteconfigonly=false --set flowCollector.enabled=false \
+             skupper charts/rhsi --set flowCollector.enabled=false \
              --set common.ingress.domain=apps.cluster-xnhcv.xnhcv.sandbox2273.opentlc.com
 
     - name: get link linkTokenCreate
@@ -115,10 +113,8 @@ jobs:
 
     - name: Install RHSI on Azure
       run: |
-        helm upgrade --install --create-namespace --namespace skupper \
-               skupper charts/rhsi --set common.siteconfigonly=true
         helm  upgrade --install --create-namespace --namespace skupper \
-             skupper charts/rhsi --set common.siteconfigonly=false --set flowCollector.enabled=false \
+             skupper charts/rhsi --set flowCollector.enabled=false \
              --set common.ingress.domain=apps.azure-xnhcv-1.xnhcv-1.sandbox2512.opentlc.com
 
     - name: Download a Build Artifact

@@ -102,7 +102,7 @@ In the `values.yaml` file, set the following:
 
 Upgrade the Helm chart on the east site:
 ```
-helm upgrade skupper ./ --set siteconfigonly=false -n east-site
+helm upgrade skupper ./ -n east-site
 ``` 
 
 ## Moving from another installation of RHSI to this new helm chart
@@ -118,7 +118,7 @@ converttohelm.sh test-dev-namespace
 2. Install the helm chart to upgrade. Note that if you are using custom certificates, you need to have those certs placed in the certs folder before running this command.
 
 ```
-helm upgrade --install skupper ./ --set siteconfigonly=false
+helm upgrade --install skupper ./
 ```
 
 ## Certificates
@@ -171,7 +171,6 @@ The certs folder should contain the following files, with the same naming conven
 
 | Name                 | Description                                                                                                    | Value           |
 | ------               | -------------------------------------------------------------------------------------------------------------- | --------------- |
-| `common.siteconfigonly`     | Deploy only site config map and not the other resources                               | `""`            |
 | `common.customhostname`    | Boolean that enables/disables custom route name for RHSI interrouter                              | `"true/false"`           |
 | `common.ingressType`    | Ingress type                                                         | `"route"`            |
 | `common.ingress.host`    | Ingress host, set to default host name if not using a custom host                  | `""skupper-inter-router""`          |

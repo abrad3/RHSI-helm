@@ -1,4 +1,3 @@
-{{ if not .Values.common.siteconfigonly }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -223,5 +222,3 @@ spec:
           name: skupper-connectjson
       - name: sharedvol
         emptyDir: {}
-
-{{- end }}

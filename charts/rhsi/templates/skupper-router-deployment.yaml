@@ -1,4 +1,3 @@
-{{ if not .Values.common.siteconfigonly }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -170,4 +169,3 @@ spec:
           defaultMode: 420
       - name: sharedvol
         emptyDir: {}
-{{- end }}

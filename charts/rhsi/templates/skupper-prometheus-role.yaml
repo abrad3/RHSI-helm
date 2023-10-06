@@ -1,4 +1,3 @@
-{{ if not .Values.common.siteconfigonly }}
 {{ if .Values.flowCollector.enabled }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -63,5 +62,4 @@ rules:
   - get
   - list
   - watch
-{{- end }}
 {{- end }}
